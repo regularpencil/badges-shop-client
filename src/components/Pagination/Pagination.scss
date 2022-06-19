@@ -1,0 +1,23 @@
+.pagination {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+
+    &__button {
+        padding: 8px 10px;
+        border: 2px solid white;
+        border-radius: 4px;
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.1s all ease;
+
+        &:hover {
+            background-color: rgba(34, 143, 216, 0.5);
+        }
+
+        &-active {
+            background-color: rgba(34, 143, 216,1);
+        }
+    }
+}

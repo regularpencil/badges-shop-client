@@ -1,0 +1,53 @@
+.orders {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    &__title {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 5px 10px;
+        border: 2px solid #fff;
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(34, 33, 33);
+    }
+
+    &__more {
+        cursor: pointer;
+        transition: 0.3s all ease;
+        &:hover {
+           color:  rgb(34, 143, 216);
+        }
+    }
+
+    &__delivery-info, &__pickUp-info {
+        padding: 10px;
+    }
+
+    &__info {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    &__cancel {
+        color: rgb(202, 49, 49);
+        cursor: pointer;
+    }
+}

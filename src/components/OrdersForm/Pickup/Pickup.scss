@@ -1,0 +1,32 @@
+.pickup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    &__select {
+        width: 80%;
+        text-align: center;
+        &-body {
+            border: 1px solid white;
+            border-top: none;
+        }
+
+        &-head {
+            font-size: 16px;
+            cursor: pointer;
+            padding: 5px 0;
+            border: 1px solid white;
+        }
+
+        &-option {
+            padding: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s all ease;
+            &:hover {
+                background-color: rgb(13, 185, 215);
+            }
+        }
+    }
+}

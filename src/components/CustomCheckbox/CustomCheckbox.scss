@@ -1,0 +1,27 @@
+.checkbox {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+ 
+    &__show {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 14px;
+        height: 14px;
+        border: 2px solid rgb(34, 143, 216);
+        border-radius: 4px;
+        transform: translateY(-50%);
+        transition: 0.08s all ease;
+    }
+
+    &__hidden {
+        position: absolute;
+        appearance: none;
+        -webkit-appearance: none;
+
+        &:checked + .checkbox__show {
+            background-color: rgb(34, 143, 216);
+        }
+    }
+}

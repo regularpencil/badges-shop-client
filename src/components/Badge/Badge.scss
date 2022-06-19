@@ -1,0 +1,65 @@
+.badge {
+    background-color: rgb(49, 48, 48);
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.144);
+    border-radius: 10px;
+    &__image {
+        width: 220px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px 10px 10px;
+    }
+
+    &__name {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    &__price {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__button {
+        width: 100%;
+        background-color: rgb(34, 143, 216);
+        padding: 5px;
+        border-radius: 5px;
+        text-align:center;
+        cursor: pointer;
+        transition: 0.3s all ease;
+
+      
+        &:hover {
+            background-color: rgb(34, 117, 172);
+        }
+    
+    }
+
+    &__favorite {
+        width: 40px;
+        margin-left: auto;
+        cursor: pointer;
+    
+        .cls-1{
+            transition: 0.2s all ease;
+            fill:#a38285;
+
+            &-active {
+                fill: #b64f57;
+            }
+        }
+        .cls-2{fill:none;stroke:#fff;stroke-miterlimit:10;stroke-width:2.35px;}
+        .cls-3{fill:#fff;opacity:0.6;}
+    }
+}

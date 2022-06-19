@@ -1,0 +1,152 @@
+.show-more {
+
+    &__body {
+        display: flex;
+        column-gap: 20px;
+        height: 100%;
+
+        @media(max-width:767px) {
+            flex-direction: column;
+        }
+    }
+
+   &__right {
+       display: flex;
+       flex-direction: column;
+   }
+
+    &__name {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    &__description {
+        font-style: italic;
+        max-width: 680px;
+        margin-bottom: 15px;
+    }
+
+    &__image {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    &__actions {
+        display: flex;
+        margin-top: auto;
+        column-gap: 20px;
+    }
+
+    &__button {
+        background-color: rgb(34, 143, 216);
+        padding: 5px 40px;
+        border-radius: 5px;
+        text-align:center;
+        cursor: pointer;
+        transition: 0.3s all ease;
+
+      
+        &:hover {
+            background-color: rgb(34, 117, 172);
+        }
+    }
+
+    &__favorite {
+        width: 35px;
+    
+        cursor: pointer;
+    }
+
+    &__material {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &-title {
+            font-size: 18px;
+        }
+
+        &-value {
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+
+    &__fastening {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-bottom: 15px;
+
+        &-title {
+            font-size: 18px;
+        }
+
+        &-value {
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+
+
+    &__counter {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        column-gap: 32px;
+        margin-top: auto;
+
+        &-num {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        &-plus, &-minus {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgb(34, 143, 216);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: rgb(34, 117, 172);
+            }
+        }
+
+        &-plus::before, &-plus::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+        }
+
+        &-plus::before {
+            width: 20px;
+            height: 3px;
+        }
+
+        &-plus::after {
+            width: 3px;
+            height: 20px;
+        }
+
+        &-minus::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

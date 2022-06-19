@@ -1,0 +1,118 @@
+.registration-form {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.401);
+
+    &__body {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 360px;
+        width: 100%;
+        max-height: 450px;
+        border-radius: 15px;
+        padding: 10px 20px;
+        background-color: rgb(78, 67, 67);
+
+    }
+
+    &__title {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        padding: 8px 10px;
+        width: 100%;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+    }
+
+    &__wrap {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    &__error {
+        color: rgb(223, 38, 38);
+        font-size: 14px;
+    }
+
+    &__notification {
+        text-align: center;
+        background-color: rgb(81, 164, 77);
+        border-radius: 10px;
+        border: 3px solid rgb(75, 216, 75);
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    &__login-btn, &__registration-btn{
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 5px;
+        font-size: 20px;
+        text-align: center;
+        text-decoration: none;
+        color: white;
+        transition: 0.3s all ease;
+        cursor: pointer;
+    }
+
+    &__login-btn {
+        margin-top: auto;
+        background-color: rgb(34, 143, 216);
+        &:hover {
+            background-color: rgb(34, 117, 172);
+        }
+    }
+
+    &__registration-btn{
+        margin-top: 15px;
+        background-color: rgb(46, 175, 80);
+        border: none;
+        &:hover {
+            background-color: rgb(40, 149, 69);
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: rgb(165, 67, 67);
+        margin-bottom: 20px;
+        cursor: pointer;
+
+        &::before, &::after {
+            position: absolute;
+            content: "";
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            top: 50%;
+            left: 50%;
+            
+        }
+
+        &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        } 
+        
+        &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+    }
+}

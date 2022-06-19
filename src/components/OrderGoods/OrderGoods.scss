@@ -1,0 +1,16 @@
+.order-goods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
+
+   &__item {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+   }
+
+   &__image {
+    width: 100px;
+   }
+}

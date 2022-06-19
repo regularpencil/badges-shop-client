@@ -1,0 +1,81 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 10px;
+        width: 100%;
+        max-width: 360px;
+        border: 1px solid white;
+        border-radius: 10px;
+    }
+
+    &__logout {
+        position: relative;
+        font-size: 18px;
+        margin-top: 10px;
+        font-weight: 400;
+        cursor: pointer;
+        color: rgba(242, 86, 86, 0.816);
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 0px;
+            height: 1px;
+            background-color: rgba(230, 56, 56, 0.782);
+            top: 110%;
+            left: 0;
+            transition: 0.3s all ease;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+    }
+
+    &__input {
+        padding: 5px;
+        width: 100%;
+        font-size: 20px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.403);
+
+        &:disabled {
+            color: grey;
+        }
+
+        &:focus {
+            border-bottom: 2px solid white;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        padding: 8px 0px;
+        border-radius: 5px;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        background-color:  rgb(34, 143, 216);
+        transition: 0.3s all ease;
+        cursor: pointer;
+      
+        &:hover {
+            background-color: rgb(34, 117, 172);
+        }
+    }
+}

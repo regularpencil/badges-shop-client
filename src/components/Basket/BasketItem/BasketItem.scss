@@ -1,0 +1,90 @@
+.basket-item {
+
+    position: relative;
+    display: flex;
+    column-gap: 10px;
+
+
+    &__image {
+        width: 110px;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__icon {
+        width: 30px;
+        cursor: pointer;
+    }
+
+    &__delete {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        cursor: pointer;
+    }
+
+
+    &__counter {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        &-num {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        &-plus, &-minus {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgb(34, 143, 216);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: rgb(34, 117, 172);
+            }
+        }
+
+        &-plus::before, &-plus::after {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+        }
+
+        &-plus::before {
+            width: 15px;
+            height: 3px;
+        }
+
+        &-plus::after {
+            width: 3px;
+            height: 15px;
+        }
+
+        &-minus::before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            width: 15px;
+            height: 3px;
+            background-color: #fff;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
