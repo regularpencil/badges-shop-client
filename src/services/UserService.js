@@ -17,3 +17,5 @@ export default class UserService {
         return $api.post("https://badges-shop-server.herokuapp.com/api/settings", {email, phoneNumber, name});
     }
 }
+
+//http://localhost:4000

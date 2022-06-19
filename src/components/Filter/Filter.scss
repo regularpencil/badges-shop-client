@@ -10,9 +10,11 @@
     box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.144);
     border-radius:15px;
     
+    
     @media(max-width:600px){
         max-width: 100%;
         height: auto;
+        margin-bottom: 10px;
     }
 
     &__title {
@@ -35,13 +37,14 @@
     &__category {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         padding-bottom: 5px;
         border-bottom: 1px solid #fff;
 
         @media(max-width:600px){
             flex-direction: row;
             align-items: center;
-            column-gap: 10px;
+            column-gap: 6px;
             margin-bottom: 10px;
             font-size: 16px;
         }

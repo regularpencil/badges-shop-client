@@ -1,7 +1,8 @@
 import "./Filter.scss";
 
 import { useSelector, useDispatch } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
@@ -38,11 +39,8 @@ const Filter = () => {
         navigate("/page-1");
     }
 
-   
-   
     return (
         <div className="filter">
-            <div className="filter__open">ФИЛЬТРЫ</div>
             <div className="filter__category">
                 <div className="filter__title">Тип крепления:</div>
                 <CustomCheckbox text="Булавка" fastening={"Булавка"}/>

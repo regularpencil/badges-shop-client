@@ -20,8 +20,10 @@ const Orders = () => {
 
     return(
         <div className="orders">
-            <div className="orders__title">Ваши заказы</div>
-            {orders.map(function(item){
+            {
+            orders.length > 0
+            ?
+            orders.map(function(item){
                 return <div className="orders__item" key={Math.random()}>
                     <div className="orders__top">
                         <div className="orders__info">
@@ -52,7 +54,10 @@ const Orders = () => {
                         }
                     </div>
                 </div>
-            })}
+            })
+            :
+            <h1>Пока здесь пусто...</h1>
+            }
         </div>
     )
 }
