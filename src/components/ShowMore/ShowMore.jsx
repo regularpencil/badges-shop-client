@@ -27,6 +27,9 @@ const ShowMore = () => {
         dispatch(addToHistory(user.email, ourBadge[0]));
     }, []);
 
+    function addBadgeToBasket() {
+        dispatch({type:"ADD_BADGE_TO_BASKET", payload:{id, name: badge.name, price: badge.price, image: badge.image, count: 1}});
+    }
 
     return (
         <div className="show-more">
@@ -47,7 +50,7 @@ const ShowMore = () => {
                         </div>
                      
                         <div className="show-more__actions">
-                                <div className="show-more__button">В корзину</div>
+                                <div className="show-more__button" onClick={addBadgeToBasket}>В корзину</div>
                                 <img src={favorite} alt="" className="show-more__favorite" />
                         </div>
                     </div>
