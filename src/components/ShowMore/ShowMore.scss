@@ -38,6 +38,8 @@
     }
 
     &__button {
+        display: flex;
+        align-items: center;
         background-color: rgb(34, 143, 216);
         padding: 5px 40px;
         border-radius: 5px;
