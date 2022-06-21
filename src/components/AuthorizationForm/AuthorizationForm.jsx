@@ -13,28 +13,7 @@ const AuthorizationForm = () => {
     const navigate = useNavigate();
     const {register, handleSubmit, formState:{errors}} = useForm();
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
     const [notification, setNotificaion] = useState({});
-
-    async function userLogin() {
-        try{
-            const response = await AuthService.login(email, password);
-            if(response.data.error === false){
-                if(response.data.user.isActivated){
-                    localStorage.setItem("token", response.data.accessToken);
-                    dispatch({type: "SET_USER_AFTER_LOGIN", payload: response.data.user});
-                    navigate("/page-1");
-                }else {
-                    setNotificaion({isVisible:true, message:"Активируйте аккаунт по ссылке, отправленной на почту"});
-                }
-            } else {
-                setNotificaion({isVisible:true, message:response.data.message});
-            }
-        } catch(e){
-            console.log(e);
-        } 
-    }
 
     async function onSubmit(data) {
         try{

@@ -3,10 +3,9 @@ import "./Basket.scss";
 import basket from "../../images/basket.svg";
 
 import { useSelector, useDispatch } from "react-redux";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 import BasketItem from "./BasketItem/BasketItem";
-import { removeFromFavorites } from "../../store/thunks";
 
 const Basket = () => {
 
@@ -42,7 +41,7 @@ const Basket = () => {
                 </div>
                 <div className="basket__bottom">
                     <div className="basket__total-price">Итого: {totalPrice} &#8381;</div>
-                    <div className="basket__button" onClick={confirm}>Оформить заказ</div>
+                    <button disabled={goods.length === 0} className="basket__button" onClick={confirm}>Оформить заказ</button>
                 </div>
                 
             </div>

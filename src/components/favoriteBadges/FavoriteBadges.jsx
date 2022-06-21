@@ -1,5 +1,4 @@
 import "./FavoriteBadges.scss";
-import UserService from "../../services/UserService";
 
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";

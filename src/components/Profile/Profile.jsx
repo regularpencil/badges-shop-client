@@ -1,6 +1,6 @@
 import "./Profile.scss";
 
-import UserService from "../../services/UserService";
+import { saveUserSettings } from "../../store/thunks";
 
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -30,14 +30,14 @@ const Profile = () => {
         setValue("phoneNumber", user.phoneNumber);
     }, [])
 
-    async function saveUserSettings(data){
-        await UserService.saveUserSettings(user.email, data.phoneNumber, data.name);
+    async function saveSettings(data){
+        dispatch(saveUserSettings(user.email, data.name, data.phoneNumber));
     }
 
     return (
         <div className="profile">
             <div className="profile__title">Личный кабинет</div>
-            <form className="profile__body" onSubmit={handleSubmit(saveUserSettings)}>
+            <form className="profile__body" onSubmit={handleSubmit(saveSettings)}>
                 <div className="profile__item">
                     <div className="profile__category">Имя:</div>
                     <input {...register("name", {required:true})} type="text" className="profile__input"/>

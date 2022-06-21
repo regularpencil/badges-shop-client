@@ -14,7 +14,7 @@ export const filterReducer = (state = defaultState, {type, payload}) => {
 
         case "REMOVE_MATERIAL_FILTER": 
             const newMaterialFilters = state.materialFilters.filter(function(item){
-                if(item != payload){
+                if(item !== payload){
                     return item;
                 }
             })
@@ -25,7 +25,7 @@ export const filterReducer = (state = defaultState, {type, payload}) => {
 
         case "REMOVE_TYPE_FILTER": 
             const newTypeFilters = state.typeFilters.filter(function(item){
-                if(item != payload){
+                if(item !== payload){
                     return item;
                 }
             })

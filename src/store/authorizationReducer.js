@@ -12,6 +12,10 @@ export const authorizationReducer = (state=defaultState, {type, payload}) => {
             return {...state, user: payload, userAuthorized: true};
         case "USER_LOGOUT":
             return {...state, user: {}, userAuthorized: false};
+        case "SET_USER_NAME":
+            return {...state, user: {...state.user, name: payload}};
+        case "SET_USER_PHONE":
+            return {...state, user: {...state.user, phoneNumber: payload}};
         default:
             return state;
     }

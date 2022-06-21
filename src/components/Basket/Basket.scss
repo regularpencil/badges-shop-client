@@ -76,14 +76,20 @@
         width: 100%;
         padding: 8px 0px;
         text-decoration: none;
+        font-size: 16px;
         color: #fff;
         text-align: center;
         background-color:  rgb(34, 143, 216);
+        border: none;
         transition: 0.3s all ease;
         cursor: pointer;
       
         &:hover {
             background-color: rgb(34, 117, 172);
+        }
+
+        &:disabled {
+            background-color: grey;
         }
     }
     

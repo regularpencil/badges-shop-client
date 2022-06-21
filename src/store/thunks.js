@@ -69,3 +69,17 @@ export const removeOrder = (email, orderId) => {
         })   
     }
 }
+
+export const saveUserSettings = (email, name, phoneNumber) => {
+    return async (dispatch, getState) => {
+        const promise = new Promise((resolve,reject)=>{
+            dispatch({type:"SET_USER_NAME", payload:name});
+            dispatch({type:"SET_USER_PHONE", payload:phoneNumber});  
+            resolve();
+        });
+        promise.then(async function(){
+            await UserService.saveUserSettings(email, phoneNumber, name);
+        })   
+    }
+}
+

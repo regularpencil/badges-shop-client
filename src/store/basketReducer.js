@@ -12,7 +12,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
         case "ADD_BADGE_TO_BASKET":
             let increasedTotalPrice = state.totalPrice;
             let newArr = [...state.goods];
-            let flag = (state.goods.find(item => item.id == payload.id) && true) || false;
+            let flag = (state.goods.find(item => item.id === payload.id) && true) || false;
             if(!flag) {
                increasedTotalPrice += payload.price;
                newArr.push(payload);
@@ -21,7 +21,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
         case "REMOVE_BADGE_FROM_BASKET":
             let decreasedTotalPrice = state.totalPrice;
             const newGoods = state.goods.filter(function(item){
-                if(item.id != payload) {
+                if(item.id !== payload) {
                     return item;
                 } else {
                     decreasedTotalPrice -= item.price * (item.count);
@@ -30,7 +30,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
             return {...state, goods:newGoods, totalPrice: decreasedTotalPrice};
         case "PLUS_TOTAL_PRICE":
             let newList = state.goods.map(function(item){
-                if(item.id == payload.id) {
+                if(item.id === payload.id) {
                     item.count += 1;
                 }
                 return item;
@@ -38,7 +38,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
             return {...state, goods: newList, totalPrice: state.totalPrice + payload.price};
         case "MINUS_TOTAL_PRICE":
             let newArray = state.goods.map(function(item){
-                if(item.id == payload.id) {
+                if(item.id === payload.id) {
                     item.count -= 1;
                 }
                 return item;

@@ -16,7 +16,7 @@ export const ordersReducer = (state=defaultState, {type, payload}) => {
         }
         case "CHANGE_ORDER_OPEN_STATE": {
             const openedOrders = [...state.orders].map(function(item){
-                if(item.id != payload){
+                if(item.id !== payload){
                     return item;
                 } else {
                     item.isOpen = !item.isOpen;
@@ -27,7 +27,7 @@ export const ordersReducer = (state=defaultState, {type, payload}) => {
         }
         case "REMOVE_ORDER": {
             const newOrders = [...state.orders].filter(function(item){
-                if(item.id != payload){
+                if(item.id !== payload){
                     return item;
                 }
             })

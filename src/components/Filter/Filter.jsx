@@ -2,7 +2,6 @@ import "./Filter.scss";
 
 import { useSelector, useDispatch } from "react-redux";
 import {useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 import CustomCheckbox from "../CustomCheckbox/CustomCheckbox";
 
@@ -19,7 +18,7 @@ const Filter = () => {
 
         let newList = [...badges];
 
-        if(materialFilters.length != 0) {
+        if(materialFilters.length !== 0) {
             newList = newList.filter(function(item){
                 if(materialFilters.includes(item.material)) {
                     return item;
@@ -27,7 +26,7 @@ const Filter = () => {
             })
         }
 
-        if(typeFilters.length != 0) {
+        if(typeFilters.length !== 0) {
             newList = newList.filter(function(item){
                 if(typeFilters.includes(item.typeFastening)) {
                     return item;
@@ -44,7 +43,7 @@ const Filter = () => {
             <div className="filter__category">
                 <div className="filter__title">Тип крепления:</div>
                 <CustomCheckbox text="Булавка" fastening={"Булавка"}/>
-                <CustomCheckbox text="Застёжка" fastening={"Застёжка"}/>
+                <CustomCheckbox text="Пин" fastening={"Пин"}/>
             </div>
 
             <div className="filter__category">

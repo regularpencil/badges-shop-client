@@ -1,7 +1,5 @@
 import "./Badge.scss";
 
-import UserService from "../../services/UserService";
-
 import {useDispatch, useSelector} from "react-redux";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";

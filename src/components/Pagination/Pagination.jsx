@@ -9,20 +9,20 @@ const Pagination = ({numberOfPages}) => {
     const [paginationButtons, setPaginationButtons] = useState([]);
 
     useEffect(function(){
-        const p = [];
+        const paginationElements = [];
         for(let i = 0; i < numberOfPages; i++) {
             if(pageNumber == i+1){
-                p.push({page:i+1, isActive: true});
+                paginationElements.push({page:i+1, isActive: true});
             } else {
-                p.push({page:i+1, isActive: false});
+                paginationElements.push({page:i+1, isActive: false});
             }
              
         }
-        setPaginationButtons(p);
+        setPaginationButtons(paginationElements);
     }, [numberOfPages])
 
     useEffect(function(){
-        const p = paginationButtons.map(function(item){
+        const paginationElements = paginationButtons.map(function(item){
             if(item.page == pageNumber) {
                 item.isActive = true;
             } else {
@@ -30,7 +30,7 @@ const Pagination = ({numberOfPages}) => {
             }
             return item;
         })
-        setPaginationButtons(p);
+        setPaginationButtons(paginationElements);
     }, [pageNumber])
 
     return (

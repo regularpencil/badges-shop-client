@@ -2,7 +2,7 @@ import './App.css';
 
 import {Provider} from "react-redux";
 import {store} from "./store/store";
-import {BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 import RouteManager from './components/RouteManager/RouteManager';
 

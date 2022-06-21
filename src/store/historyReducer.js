@@ -8,12 +8,20 @@ export const historyReducer = (state=defaultState, {type, payload}) => {
             return {...state, historyBadges: payload};
         case "ADD_HISTORY":
             const newHistory = [...state.historyBadges];
-            if(!newHistory.includes(payload)){
-                newHistory.push(payload);
+            let hasBadge = false;
+
+            state.historyBadges.forEach(function(badge){
+                if(badge.id === payload.id){
+                    hasBadge = true;
+                }
+            })
+
+            if(!hasBadge){
+                newHistory.unshift(payload);
             }
             
             if(newHistory.length > 4) {
-                newHistory.shift();
+                newHistory.pop();
             }
             return {...state, historyBadges: newHistory}
         default:

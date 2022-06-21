@@ -10,7 +10,7 @@ export const favoriteReducer = (state=defaultState, {type, payload}) => {
             return {...state, favoriteBadges: [...state.favoriteBadges, payload]};
         case "REMOVE_FAVORITE_BADGE":
             const newFavoriteBadges = state.favoriteBadges.filter(function(item){
-                if(item != payload){
+                if(item !== payload){
                     return item;
                 }
             })
