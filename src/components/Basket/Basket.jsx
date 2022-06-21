@@ -41,7 +41,7 @@ const Basket = () => {
                 </div>
                 <div className="basket__bottom">
                     <div className="basket__total-price">Итого: {totalPrice} &#8381;</div>
-                    <button disabled={goods.length === 0} className="basket__button" onClick={confirm}>Оформить заказ</button>
+                    <div className="basket__button" onClick={confirm}>Оформить заказ</div>
                 </div>
                 
             </div>
