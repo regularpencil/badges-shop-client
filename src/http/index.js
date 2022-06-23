@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const API_URL = `http://localhost:4000/api`;
+export const API_URL = `https://badges-shop-server.herokuapp.com/api`;
 
 export const $api = axios.create({
     withCredentials: true,
-    baseUrl: "http://localhost:4000/api"
+    baseUrl: "https://badges-shop-server.herokuapp.com/api"
 })
 
 $api.interceptors.request.use((config)=>{
@@ -17,7 +17,7 @@ $api.interceptors.response.use((config)=>{
 }, async (error)=>{
     const originalRequest = error.config;
     if(error.response.status === 401){
-        const response = await axios.get("http://localhost:4000/api/refresh", {withCredentials:true});
+        const response = await axios.get("https://badges-shop-server.herokuapp.com/api/refresh", {withCredentials:true});
         localStorage.setItem("token", response.data.accessToken);
         return $api.request(originalRequest);
     }
