@@ -13,12 +13,13 @@ const BasketItem = ({id, name, image, price}) => {
 
     function deleteBadge() {
         dispatch({type:"REMOVE_BADGE_FROM_BASKET", payload: id});
+        dispatch({type:"BADGE_INCART_FALSE", payload: id});
     }
 
     function plus() {
         const newValue = counter + 1;
         setCounter(newValue);
-        dispatch({type:"PLUS_TOTAL_PRICE", payload: {price, id}});
+        dispatch({type:"INCREASE_TOTAL_PRICE", payload: {price, id}});
     }
 
     function minus() {
@@ -27,7 +28,7 @@ const BasketItem = ({id, name, image, price}) => {
             setCounter(1);
         } else {
             setCounter(newValue);
-            dispatch({type:"MINUS_TOTAL_PRICE", payload: {price, id}});
+            dispatch({type:"DECREASE_TOTAL_PRICE", payload: {price, id}});
         }
     }
 

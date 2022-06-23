@@ -8,12 +8,15 @@ export const ordersReducer = (state=defaultState, {type, payload}) => {
         case "ORDERS_INIT": {
             return {...state, orders: payload};
         }
+
         case "CHANGE_TYPE_ORDER": {
             return {...state, isDelivery: !state.isDelivery};
         }
+
         case "ADD_NEW_ORDER": {
             return {...state, orders:[...state.orders, payload]};
         }
+
         case "CHANGE_ORDER_OPEN_STATE": {
             const openedOrders = [...state.orders].map(function(item){
                 if(item.id !== payload){
@@ -25,6 +28,7 @@ export const ordersReducer = (state=defaultState, {type, payload}) => {
             })
             return {...state, orders:openedOrders};
         }
+
         case "REMOVE_ORDER": {
             const newOrders = [...state.orders].filter(function(item){
                 if(item.id !== payload){
@@ -33,6 +37,7 @@ export const ordersReducer = (state=defaultState, {type, payload}) => {
             })
             return {...state, orders:newOrders};
         }
+        
         default:
             return state;
     }

@@ -12,7 +12,8 @@ const Badges = ({badgesArray}) => {
                         id={item.id} 
                         name={item.name} 
                         image={item.image} 
-                        price={item.price} 
+                        price={item.price}
+                        inCart={item.inCart} 
                         key={"132"+item.name}
                     />
                 )

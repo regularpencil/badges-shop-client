@@ -16,7 +16,7 @@ const Wrapper = () => {
 
     useEffect(function(){
         dispatch({type:"FILTER_BADGES_INIT", payload: badges});
-    }, []);
+    }, [badges]);
 
     useEffect(function(){
         if(userAuthorized) {

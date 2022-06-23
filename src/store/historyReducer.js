@@ -6,6 +6,7 @@ export const historyReducer = (state=defaultState, {type, payload}) => {
     switch(type) {
         case "HISTORY_INIT":
             return {...state, historyBadges: payload};
+
         case "ADD_HISTORY":
             const newHistory = [...state.historyBadges];
             let hasBadge = false;
@@ -24,6 +25,7 @@ export const historyReducer = (state=defaultState, {type, payload}) => {
                 newHistory.pop();
             }
             return {...state, historyBadges: newHistory}
+            
         default:
             return state;
     }

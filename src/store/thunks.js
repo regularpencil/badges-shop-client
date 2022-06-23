@@ -1,4 +1,5 @@
 import UserService from "../services/UserService";
+
 export const removeFromFavorites = (email, id) => {
     return async (dispatch, getState) => {
         let favorites = [];

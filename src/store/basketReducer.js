@@ -9,6 +9,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
     switch(type) {
         case "CHANGE_BASKET_VISIBLE":
             return {...state, basketIsVisible: payload};
+
         case "ADD_BADGE_TO_BASKET":
             let increasedTotalPrice = state.totalPrice;
             let newArr = [...state.goods];
@@ -18,6 +19,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
                newArr.push(payload);
             }
             return {...state, goods:newArr, totalPrice: increasedTotalPrice};
+
         case "REMOVE_BADGE_FROM_BASKET":
             let decreasedTotalPrice = state.totalPrice;
             const newGoods = state.goods.filter(function(item){
@@ -28,7 +30,8 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
                 }
             })
             return {...state, goods:newGoods, totalPrice: decreasedTotalPrice};
-        case "PLUS_TOTAL_PRICE":
+
+        case "INCREASE_TOTAL_PRICE":
             let newList = state.goods.map(function(item){
                 if(item.id === payload.id) {
                     item.count += 1;
@@ -36,7 +39,8 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
                 return item;
             })
             return {...state, goods: newList, totalPrice: state.totalPrice + payload.price};
-        case "MINUS_TOTAL_PRICE":
+            
+        case "DECREASE_TOTAL_PRICE":
             let newArray = state.goods.map(function(item){
                 if(item.id === payload.id) {
                     item.count -= 1;
@@ -44,6 +48,7 @@ export const basketReducer = (state=defaultState, {type, payload}) => {
                 return item;
             })
             return {...state, goods: newArray, totalPrice: state.totalPrice - payload.price};
+
         default:
             return state;
     }

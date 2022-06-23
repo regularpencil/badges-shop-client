@@ -39,11 +39,17 @@
         cursor: pointer;
         transition: 0.3s all ease;
 
-      
         &:hover {
             background-color: rgb(34, 117, 172);
         }
-    
+
+        &--added {
+            background-color: rgb(18, 154, 18);
+
+            &:hover {
+                background-color: rgb(16, 132, 16);
+            }
+        }    
     }
 
     &__favorite {

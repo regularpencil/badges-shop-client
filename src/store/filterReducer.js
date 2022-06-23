@@ -9,6 +9,7 @@ export const filterReducer = (state = defaultState, {type, payload}) => {
     switch(type) {
         case "FILTER_BADGES_INIT":
             return {...state, filteredBadges: payload};
+
         case "ADD_MATERIAL_FILTER":
             return {...state, materialFilters: [...state.materialFilters, payload]};
 
@@ -30,6 +31,7 @@ export const filterReducer = (state = defaultState, {type, payload}) => {
                 }
             })
             return {...state, typeFilters: newTypeFilters};
+            
         case"CLEAR_FILTERS":
             return {...state, typeFilters:[], materialFilters: []};
         default:
