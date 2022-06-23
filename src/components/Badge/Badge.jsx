@@ -23,7 +23,6 @@ const Badge = ({id, name, image, price, inCart}) => {
     function addBadgeToBasket() {
         dispatch({type:"ADD_BADGE_TO_BASKET", payload:{id, name, price, image, count: 1}});
         dispatch({type:"BADGE_INCART_TRUE", payload: id});
-        console.log(inCart);
     }
 
     function changeFavorite() {
